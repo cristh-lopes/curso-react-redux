@@ -26,7 +26,7 @@ const UseRef = (props) => {
       />
       <SectionTitle title="Exercício #01" />
       <div>
-        <span className="text">Valor: {merge(value1,value2)} [</span>
+        <span className="text">Valor: {merge(value1, value2)} [</span>
         <span className="text red">{count.current}</span>
         <span className="text">]</span>
       </div>

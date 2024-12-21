@@ -40,7 +40,7 @@ const UseEffect = (props) => {
           onChange={(e) => setNumber(e.target.value)}
         />
       </div>
-      
+
       <SectionTitle title="Exercicio #02" />
       <div className="center">
         <div>
