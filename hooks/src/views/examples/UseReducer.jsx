@@ -1,5 +1,6 @@
 import React, { useReducer } from "react";
 import PageTitle from "../../components/layout/PageTitle";
+import SectionTitle from "../../components/layout/SectionTitle";
 
 const initialState = {
   cart: [],
@@ -15,6 +16,14 @@ function reducer(state, action) {
       return { ...state, number: state.number + 2 };
     case "login":
       return { ...state, user: action.payload };
+    case "number_mult7":
+      return { ...state, number: state.number * 7 };
+    case "number_div25":
+      return { ...state, number: state.number / 25 };
+    case "number_parseInt":
+      return { ...state, number: parseInt(state.number) };
+    case "number_addN":
+      return { ...state, number: state.number + action.payload };
     default:
       return state;
   }
@@ -45,6 +54,33 @@ const UseReducer = (props) => {
             +2
           </button>
         </div>
+      </div>
+      <SectionTitle title="Exercício #02" />
+      <div>
+        <button
+          className="btn"
+          onClick={() => dispatch({ type: "number_mult7" })}
+        >
+          *7
+        </button>
+        <button
+          className="btn"
+          onClick={() => dispatch({ type: "number_div25" })}
+        >
+          /25
+        </button>
+        <button
+          className="btn"
+          onClick={() => dispatch({ type: "number_parseInt" })}
+        >
+          Parse Int
+        </button>
+        <button
+          className="btn"
+          onClick={() => dispatch({ type: "number_addN", payload: 5 })}
+        >
+          +N
+        </button>
       </div>
     </div>
   );
